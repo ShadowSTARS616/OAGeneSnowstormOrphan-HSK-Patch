@@ -8,7 +8,11 @@ HSK patch for [OA]Ratkin Scenario: Snowstorm Orphan | [OA]鼠族剧本扩展：�
 
 能力有限，目前只做了一点点东西，基本能开局玩了，但是后期事件完全没有经过测试（主要是不知道怎么用开发者调出来归乡事件）。本来是自己弄着玩的，想了下说不定有其他人也想在HSK玩这个就传上来了（）别的我还没弄，能做到现在这个水平已经谢天谢地了
 
+难度平衡也基本没做（）想着开局有野生作物和野生图腾可以拆了做原始零部件，以及早期食物保存有晾干架和罐子，屋顶底下石头还能自己长蘑菇，所以就没改太多，只给了一套工具，加了一点点起始资源，给了隔壁鼠鼠开局有的几个科技。推荐初始角色建筑等级至少roll到3级，否则连锯木台都做不了。
+
 My modding skills are limited, and I’ve only managed to implement a few core fixes so far. With this patch, you can now start and play the “The orphan of the snowstorm” without immediate errors—but later incidents remain untested, as I’m not yet sure how to trigger the “Return Home” event via the developer console.
+
+I didn’t spend much time on difficulty balance -- I figured that starting with wild crops and totems can be dismantle for primitive parts, early food preservation with drying racks and pots, and mushrooms growing on stone ground under roof would be enough. So I only added a set of tools, a small amount of starting resources, and the few technologies that the neighboring Ratkin start with. Starting colonist recommends at least Lv3 Construction, or you won’t be able to build even a sawmill.
 
 + 主要修改：
 
