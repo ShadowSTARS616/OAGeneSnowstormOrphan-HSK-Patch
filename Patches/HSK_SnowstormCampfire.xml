@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- 移除原版燃料机制 -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName="OAGene_SnowstormCampfire"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName="OAGene_SnowstormCampfire"]/comps/li[@Class="CompProperties_HeatPusher"]</xpath>
+  </Operation>
+  <!--不知道为什么采用HSK的火焰显示机制会导致火焰大小不对和火焰位置不听控制的情况，只能重新采用原版火焰显示
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName="OAGene_SnowstormCampfire"]/comps/li[@Class="CompProperties_FireOverlay"]</xpath>
+  </Operation>
+-->
+  <!-- 添加HSK燃料机制 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="OAGene_SnowstormCampfire"]/comps</xpath>
+    <value>
+      <li Class="SK.CompProperties_HeatPusherAdvanced">
+        <compClass>SK.CompHeatPusherAdvanced</compClass>
+        <heatPerSecond>4</heatPerSecond>
+        <heatPushMaxTemperature>28</heatPushMaxTemperature>
+      </li><!--
+		<li Class="SK.CompProperties_FireOverlayMod">
+			<fireSize>0.3</fireSize>
+			<offset>(0.13,0,-0.1)</offset>
+		</li>-->
+      <li Class="SK.CompFueled_Properties">
+        <operatingTemp>300</operatingTemp><!--
+        <fireDrawOffset>(0.13, 0, -0.1)</fireDrawOffset>
+		<fireDrawScale>0.2</fireDrawScale>-->
+        <smokeDrawOffset>(0,0,0.1)</smokeDrawOffset>
+        <fuelDrawOffset>(0,0.1,0.01)</fuelDrawOffset>
+        <fuelDrawScale>0.2</fuelDrawScale>
+        <fuelCapacity>14</fuelCapacity>
+		<!-- 根据风雪篝火原低燃料消耗的特点调整燃料燃烧时长系数 -->
+        <burnFuelMultiplier>2</burnFuelMultiplier>
+        <smokesize>0.3</smokesize>
+        <canAutoBurn>true</canAutoBurn>
+        <effectOnWeather>true</effectOnWeather>
+        <smokeDensity>2</smokeDensity>
+        <fuelFilter>
+          <thingDefs>
+            <li>Charcoal</li>
+            <li>Coal</li>
+            <li>Kindling</li>
+            <li>Tallow</li>
+          </thingDefs>
+          <categories>
+            <li>Wooden</li>
+            <li>Woody</li>
+          </categories>
+        </fuelFilter>
+      </li>
+    </value>
+  </Operation>
+  <!-- 修改建筑分类以添加燃料按钮 -->
+  <Operation Class="PatchOperationAttributeSet">
+  <xpath>Defs/ThingDef[defName="OAGene_SnowstormCampfire"]</xpath>
+  <attribute>ParentName</attribute>
+  <value>BuildingFueled</value>
+  </Operation>
+  <!-- 移除重复配方按钮 -->
+  <Operation Class="PatchOperationRemove">
+  <xpath>Defs/ThingDef[defName="OAGene_SnowstormCampfire"]/inspectorTabs</xpath>
+</Operation>
+</Patch>

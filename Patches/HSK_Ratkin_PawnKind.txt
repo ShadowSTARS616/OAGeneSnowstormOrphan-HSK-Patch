@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/PawnKindDef[@Name="RKBasePawnKind"]/minGenerationAge</xpath>
+  <value>
+    <minGenerationAge>13</minGenerationAge>
+  </value>
+</Operation>
+</Patch>

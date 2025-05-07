@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>风雪遗孤HSK补丁</name>
+  <author>ShadowSTARS616</author>
+  <packageId>ShadowSTARS616.SnowstormOrphanHSKFix</packageId>
+  <description>风雪遗孤HSK简单适配</description>
+  <supportedVersions>
+  <li>1.5</li>
+  </supportedVersions>
+  <modVersion>0.3</modVersion>
+  <modDependencies>
+    <li>
+      <packageId>Solaris.RatkinRaceMod</packageId>
+      <displayName>NewRatkinPlus</displayName>
+    </li>
+    <li>
+      <packageId>OARK.RatkinFaction.GeneExpand</packageId>
+      <displayName>[OA]Ratkin Gene Expand</displayName>
+    </li>
+    <li>
+      <packageId>OARK.RatkinFaction.ScenarioExpand.Snowstorm</packageId>
+      <displayName>[OA]Ratkin Scenario: Snowstorm Orphan</displayName>
+	  <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3381392312</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  
+  <loadAfter>
+    <li>OARK.RatkinFaction.ScenarioExpand.Snowstorm</li>
+  </loadAfter>
+</ModMetaData>

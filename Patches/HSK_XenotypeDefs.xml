@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- 修改所有基因扩展的XenotypeDef并入HSK的Xenotype -->
+<!--
+  <Operation Class="PatchOperationAttributeSet">
+    <xpath>/Defs/XenotypeDef[defName="OAGene_RatkinBase"]</xpath>
+    <attribute>ParentName</attribute>
+    <value>Baseline_Ratkin</value>
+  </Operation>
+
+  <Operation Class="PatchOperationAttributeSet">
+    <xpath>/Defs/XenotypeDef[defName="OAGene_PrimordialRatkin"]</xpath>
+    <attribute>ParentName</attribute>
+    <value>Baseline_Ratkin</value>
+  </Operation>
+
+  <Operation Class="PatchOperationAttributeSet">
+    <xpath>/Defs/XenotypeDef[defName="OAGene_WhiteRatkin"]</xpath>
+    <attribute>ParentName</attribute>
+    <value>Baseline_Ratkin</value>
+  </Operation>
+
+  <Operation Class="PatchOperationAttributeSet">
+    <xpath>/Defs/XenotypeDef[defName="OAGene_TravelRatkin"]</xpath>
+    <attribute>ParentName</attribute>
+    <value>Baseline_Ratkin</value>
+  </Operation>
+
+  <Operation Class="PatchOperationAttributeSet">
+    <xpath>/Defs/XenotypeDef[defName="OAGene_RockRatkin"]</xpath>
+    <attribute>ParentName</attribute>
+    <value>Baseline_Ratkin</value>
+  </Operation>
+
+  <Operation Class="PatchOperationAttributeSet">
+    <xpath>/Defs/XenotypeDef[defName="OAGene_SnowRatkin"]</xpath>
+    <attribute>ParentName</attribute>
+    <value>Baseline_Ratkin</value>
+  </Operation>
+
+  <Operation Class="PatchOperationAttributeSet">
+    <xpath>/Defs/XenotypeDef[defName="OAGene_LowlandRatkin"]</xpath>
+    <attribute>ParentName</attribute>
+    <value>Baseline_Ratkin</value>
+  </Operation>
+  -->
+
+  <!-- 使基因修改鼠鼠变为HSK鼠鼠的子类别 
+  <Operation Class="PatchOperationAttributeAdd">
+    <xpath>/Defs/XenotypeDef[defName="OAGene_XenoRatkinBase"]</xpath>
+    <attribute>ParentName</attribute>
+    <value>Baseline_Ratkin</value>
+  </Operation>
+  
+  <Operation Class="PatchOperationAttributeAdd">
+    <xpath>/Defs/XenotypeDef[defName="OAGene_BiochemicalRatkinBase"]</xpath>
+    <attribute>ParentName</attribute>
+    <value>Baseline_Ratkin</value>
+  </Operation>
+  -->
+  <!-- 新增所有基因型条目至HSK鼠鼠基础类型，基因拓展的原补丁因为路径更改导致未能生效 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Ratkin"]/alienRace/raceRestriction/xenotypeList</xpath>
+    <value>
+      <li MayRequire="Ludeon.RimWorld.Biotech">OAGene_RatkinBase</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">OAGene_PrimordialRatkin</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">OAGene_WhiteRatkin</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">OAGene_TravelRatkin</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">OAGene_RockRatkin</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">OAGene_SnowRatkin</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">OAGene_LowlandRatkin</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">OAGene_BiochemicalRatkinBase</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">OAGene_BiochemicalRatkinI</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">OAGene_BiochemicalRatkinII</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">OAGene_BiochemicalRatkinIII</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">OAGene_BiochemicalRatkinIV</li>
+    </value>
+  </Operation>
+  
+  <!-- 取消鼠鼠基因扩展对鼠鼠本体的基因限制修改，因为HSK用了不同的限制方式 -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/blackXenotypeList/li[text()="Baseliner"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_RatkinBase"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_PrimordialRatkin"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_WhiteRatkin"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_TravelRatkin"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_RockRatkin"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_SnowRatkin"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_LowlandRatkin"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_BiochemicalRatkinI"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_BiochemicalRatkinII"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_BiochemicalRatkinIII"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_BiochemicalRatkinIV"]</xpath>
+  </Operation>
+  
+ <!-- 将基因拓展的鼠鼠类型添加进HSK的新pawnkind -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="RatkinColonist"]/xenotypeSet/xenotypeChances</xpath>
+    <value>
+      <OAGene_PrimordialRatkin>0.28</OAGene_PrimordialRatkin>
+      <OAGene_WhiteRatkin>0.04</OAGene_WhiteRatkin>
+      <OAGene_TravelRatkin>0.10</OAGene_TravelRatkin>
+      <OAGene_RockRatkin>0.14</OAGene_RockRatkin>
+      <OAGene_SnowRatkin>0.08</OAGene_SnowRatkin>
+      <OAGene_LowlandRatkin>0.06</OAGene_LowlandRatkin>
+      <OAGene_BiochemicalRatkinI>0.01</OAGene_BiochemicalRatkinI>
+      <OAGene_BiochemicalRatkinII>0.01</OAGene_BiochemicalRatkinII>
+      <OAGene_BiochemicalRatkinIII>0.01</OAGene_BiochemicalRatkinIII>
+      <OAGene_BiochemicalRatkinIV>0.01</OAGene_BiochemicalRatkinIV>
+    </value>
+  </Operation>
+    <Operation Class="PatchOperationReplace">
+    <xpath>Defs/PawnKindDef[defName="RatkinColonist"]/xenotypeSet/xenotypeChances/Baseline_Ratkin</xpath>
+    <value>
+      <Baseline_Ratkin MayRequire="Ludeon.Rim.World.Biotech">0.29</Baseline_Ratkin>
+    </value>
+  </Operation>
+    <Operation Class="PatchOperationAdd">
+    <xpath>Defs/PawnKindDef[defName="RatkinColonistSK"]/xenotypeSet/xenotypeChances</xpath>
+    <value>
+      <OAGene_PrimordialRatkin>0.28</OAGene_PrimordialRatkin>
+      <OAGene_WhiteRatkin>0.04</OAGene_WhiteRatkin>
+      <OAGene_TravelRatkin>0.10</OAGene_TravelRatkin>
+      <OAGene_RockRatkin>0.14</OAGene_RockRatkin>
+      <OAGene_SnowRatkin>0.08</OAGene_SnowRatkin>
+      <OAGene_LowlandRatkin>0.06</OAGene_LowlandRatkin>
+      <OAGene_BiochemicalRatkinI>0.01</OAGene_BiochemicalRatkinI>
+      <OAGene_BiochemicalRatkinII>0.01</OAGene_BiochemicalRatkinII>
+      <OAGene_BiochemicalRatkinIII>0.01</OAGene_BiochemicalRatkinIII>
+      <OAGene_BiochemicalRatkinIV>0.01</OAGene_BiochemicalRatkinIV>
+    </value>
+  </Operation>
+    <Operation Class="PatchOperationReplace">
+    <xpath>Defs/PawnKindDef[defName="RatkinColonistSK"]/xenotypeSet/xenotypeChances/Baseline_Ratkin</xpath>
+    <value>
+      <Baseline_Ratkin MayRequire="Ludeon.Rim.World.Biotech">0.29</Baseline_Ratkin>
+    </value>
+  </Operation>
+
+    <!-- 替换 XenotypeDef 中的原生鼠族耳朵尾巴基因使，改用OA基因扩展的尾巴耳朵基因 -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/XenotypeDef[defName="Baseline_Ratkin"]/genes/li[text()="Ears_Ratkin"]</xpath>
+    <value>
+      <li>OAGene_RatkinEar</li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/XenotypeDef[defName="Baseline_Ratkin"]/genes/li[text()="Tail_Ratkin"]</xpath>
+    <value>
+      <li>OAGene_RatkinTail</li>
+    </value>
+  </Operation>
+  <!-- 左耳部位添加基因 -->
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Ratkin"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[path="Body/RK_EarLeft"]/conditions</xpath>
+  <value>
+    <conditions>
+      <Gene>
+        <gene>OAGene_RatkinEar</gene>
+      </Gene>
+    </conditions>
+  </value>
+</Operation>
+
+<!-- 右耳部位添加基因 -->
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Ratkin"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[path="Body/RK_EarRight"]/conditions</xpath>
+  <value>
+    <conditions>
+      <Gene>
+        <gene>OAGene_RatkinEar</gene>
+      </Gene>
+    </conditions>
+  </value>
+</Operation>
+
+<!-- 尾巴部位添加基因 -->
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Ratkin"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[path="Body/RK_Tail"]/conditions</xpath>
+  <value>
+    <conditions>
+      <Gene>
+        <gene>OAGene_RatkinTail</gene>
+      </Gene>
+    </conditions>
+  </value>
+</Operation>
+
+</Patch>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- 修改风雪遗孤场景中的衣服研究项目ID避免报错 -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ScenarioDef[defName='OAGene_Scenario_Snow']/scenario/parts/li[@Class='ScenPart_StartingResearch']/project</xpath>
+    <value>
+      <project>Ratkin_Apparel_B1</project>
+    </value>
+  </Operation>
+  <!-- 修改匕首材料，哪有人用铁矿石做匕首的 -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>
+      Defs/ScenarioDef[defName='OAGene_Scenario_Snow']/scenario/parts/
+      li[
+        @Class='ScenPart_StartingThing_Defined' and 
+        ./thingDef='RK_Dagger' and 
+        ./stuff='Steel'
+      ]/stuff
+    </xpath>
+    <value>
+      <stuff>Bronze</stuff>
+    </value>
+  </Operation>
+  <!-- 盾牌不能用原木，修改盾牌材料避免报错 -->
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/ScenarioDef[defName="OAGene_Scenario_Snow"]/scenario/parts/li[thingDef="RK_WoodenShield"]</xpath>
+  <value>
+    <li Class="ScenPart_StartingThing_Defined">
+      <def>StartingThing_Defined</def>
+      <thingDef>RK_WoodenShield</thingDef>
+      <stuff>WoodPlank</stuff>
+      <quality>Poor</quality>
+    </li>
+  </value>
+</Operation>
+ 
+  <!-- 添加新起始研究项目和工具以适配HSK环境 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ScenarioDef[defName='OAGene_Scenario_Snow']/scenario/parts</xpath>
+    <value>
+      <li Class="ScenPart_StartingResearch">
+        <def>StartingResearch</def>
+        <project>Craft_B1</project>
+      </li>
+	  <!--
+      <li Class="ScenPart_StartingResearch">
+        <def>StartingResearch</def>
+        <project>Bow_B2</project>
+      </li>
+	   -->
+      <li Class="ScenPart_StartingResearch">
+        <def>StartingResearch</def>
+        <project>Food_B1</project>
+      </li>
+      <li Class="ScenPart_StartingResearch">
+        <def>StartingResearch</def>
+        <project>Food_B3</project>
+      </li>
+      <li Class="ScenPart_StartingResearch">
+        <def>StartingResearch</def>
+        <project>Food_Plants_A2</project>
+      </li>
+      <li Class="ScenPart_StartingThing_Defined">
+        <def>StartingThing_Defined</def>
+        <thingDef>TFJ_Tool_Woodcutting_Handaxe</thingDef>
+        <stuff>Plasteel</stuff>
+      </li>
+      <li Class="ScenPart_StartingThing_Defined">
+        <def>StartingThing_Defined</def>
+        <thingDef>TFJ_Tool_Mining_Pickaxe</thingDef>
+        <stuff>Bronze</stuff>
+      </li>
+      <li Class="ScenPart_StartingThing_Defined">
+        <def>StartingThing_Defined</def>
+        <thingDef>TFJ_Tool_Building_Hammer</thingDef>
+        <stuff>Bronze</stuff>
+      </li>
+		<li Class="ScenPart_ScatterThingsAnywhere">
+			<def>ScatterThingsAnywhere</def>
+			<thingDef>Totem</thingDef>
+			<stuff>WoodLog</stuff>
+			<count>4</count>
+			<allowRoofed>True</allowRoofed>
+		</li>
+		<li Class="ScenPart_DisableIncident">
+				<def>DisableIncident</def>
+				<incident>Inferno</incident>
+		</li>
+    </value>
+  </Operation>
+    <Operation Class="PatchOperationReplace">
+    <xpath>
+      Defs/ScenarioDef[defName='OAGene_Scenario_Snow']/scenario/parts/
+      li[
+        @Class='ScenPart_ScatterThingsAnywhere' and 
+        ./thingDef='WoodLog'
+      ]/count
+    </xpath>
+    <value>
+	  <count>200</count>
+    </value>
+  </Operation>
+     <Operation Class="PatchOperationReplace">
+    <xpath>
+      Defs/ScenarioDef[defName='OAGene_Scenario_Snow']/scenario/parts/
+      li[
+        @Class='ScenPart_ScatterThingsAnywhere' and 
+        ./thingDef='Steel'
+      ]/count
+    </xpath>
+    <value>
+	<thingDef>Plasteel</thingDef>
+	  <count>100</count>
+    </value>
+  </Operation>
+</Patch>
