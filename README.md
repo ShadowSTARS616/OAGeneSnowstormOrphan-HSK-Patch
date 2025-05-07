@@ -6,7 +6,7 @@ HSK patch for [OA]Ratkin Scenario: Snowstorm Orphan | [OA]鼠族剧本扩展：�
 **IMPORTANT NOTE: At the start of the scenario you must manually set your colonist’s age range to “Child” in the top-right corner, otherwise a 14-year-old Ratkin won’t generate correctly.**
 
 
-能力有限，目前只做了一点点东西，基本能开局玩了，但是后期事件完全没有经过测试（主要是不知道怎么用开发者调出来归乡事件）
+能力有限，目前只做了一点点东西，基本能开局玩了，但是后期事件完全没有经过测试（主要是不知道怎么用开发者调出来归乡事件）。本来是自己弄着玩的，想了下说不定有其他人也想在HSK玩这个就传上来了（）别的我还没弄，能做到现在这个水平已经谢天谢地了
 
 My modding skills are limited, and I’ve only managed to implement a few core fixes so far. With this patch, you can now start and play the “The orphan of the snowstorm” without immediate errors—but later incidents remain untested, as I’m not yet sure how to trigger the “Return Home” event via the developer console.
 
@@ -22,8 +22,6 @@ My modding skills are limited, and I’ve only managed to implement a few core f
 
 + 风雪篝火使用HSK燃料机制的适配。
 
-别的我还没弄，能做到现在这个水平已经谢天谢地了（）
-
 Main changes:
 
 + Fixed startup errors in the Snowstorm Orphan scenario (corrected modified research project IDs; added several basic technologies and tools).
@@ -35,6 +33,10 @@ Main changes:
 + Restored correct ear graphics so they display properly.
 
 + Adapted the Snowstorm Campfire to use the HSK fuel system.
+
+已知问题：
+
++ roll人的时候会显示尝试300次无法生成符合要求的小人，并且需要手动选择年龄段才能正常生成14岁鼠鼠。（不过我看基本上没太大问题就没管了，HSK好像改了鼠鼠pawnkind的年龄段，但是我看着def好像也没有冲突，不知道是怎么回事）
 
 [OA]鼠族基因扩展  [![Steam Downloads](https://img.shields.io/steam/downloads/3300291918?style=flat&logo=steam&label=Steam%20Workshop)](https://steamcommunity.com/sharedfiles/filedetails/?id=3300291918)
 
