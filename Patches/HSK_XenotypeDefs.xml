@@ -77,44 +77,6 @@
     </value>
   </Operation>
   
-  <!-- 取消鼠鼠基因扩展对鼠鼠本体的基因限制修改，因为HSK用了不同的限制方式 -->
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/blackXenotypeList/li[text()="Baseliner"]</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_RatkinBase"]</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_PrimordialRatkin"]</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_WhiteRatkin"]</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_TravelRatkin"]</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_RockRatkin"]</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_SnowRatkin"]</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_LowlandRatkin"]</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_BiochemicalRatkinI"]</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_BiochemicalRatkinII"]</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_BiochemicalRatkinIII"]</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/AlienRace.ThingDef_alienRace[defName="Ratkin"]/alienRace/raceRestriction/whiteXenotypeList/li[text()="OAGene_BiochemicalRatkinIV"]</xpath>
-  </Operation>
-  
  <!-- 将基因拓展的鼠鼠类型添加进HSK的新pawnkind -->
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/PawnKindDef[defName="RatkinColonist"]/xenotypeSet/xenotypeChances</xpath>
